@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>公開板（自分勝手に公開しています）</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+    background: #f4f1ea;
+    color: #2b2b2b;
+    line-height: 1.8;
+  }
+  header {
+    background: #3a4a5a;
+    color: #fff;
+    padding: 28px 16px;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+  }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+  }
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .card h2 {
+    margin-top: 0;
+    font-size: 1.15rem;
+    border-left: 5px solid #e8a33d;
+    padding-left: 10px;
+  }
+  .code-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    background: #fdf6e7;
+    border: 2px dashed #e8a33d;
+    border-radius: 10px;
+    padding: 16px;
+    margin: 16px 0;
+  }
+  .code {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    font-family: monospace;
+  }
+  .copy-btn {
+    background: #e8a33d;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  .copy-btn:active { opacity: 0.7; }
+  .copied {
+    font-size: 0.85rem;
+    color: #2e7d32;
+    min-height: 1.2em;
+    text-align: center;
+  }
+  .highlight {
+    background: linear-gradient(transparent 60%, #ffe58a 60%);
+    font-weight: bold;
+  }
+  .video-wrap {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    margin: 16px 0 8px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #000;
+  }
+  .video-wrap iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: 0;
+  }
+  .video-link { font-size: 0.9rem; word-break: break-all; }
+  .note { color: #666; font-size: 0.9rem; }
+  footer {
+    text-align: center;
+    color: #999;
+    font-size: 0.8rem;
+    padding: 16px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>公開板（自分勝手に公開しています）</h1>
+</header>
+
+<main>
+  <div class="card">
+    <h2>muse.aiの紹介コードを公開します</h2>
+
+    <p>招待コード:</p>
+    <div class="code-box">
+      <span class="code" id="inviteCode">6HEGPM</span>
+      <button class="copy-btn" onclick="copyCode()">コピー</button>
+    </div>
+    <div class="copied" id="copiedMsg"></div>
+
+    <p>
+      コードの登録方法は、下記の動画を見てください。<br>
+      muse.aiのアカウントを取得してから<span class="highlight">「48時間以内」</span>に登録すると
+      <strong>10億トークン</strong>が受け取れます。それを使って、動画、画像、プロンプト、色々なことができます。
+    </p>
+
+    <p>他者の方が紹介している動画です。(汗)</p>
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/ZLXJkimelXw"
+        title="muse.ai 招待コードの登録方法"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+    <p class="video-link">
+      動画が表示されない場合はこちら:
+      <a href="https://www.youtube.com/watch?v=ZLXJkimelXw" target="_blank" rel="noopener">https://www.youtube.com/watch?v=ZLXJkimelXw</a>
+    </p>
+  </div>
+</main>
+
+<footer>公開板（自分勝手に公開しています）</footer>
+
+<script>
+function copyCode() {
+  var code = document.getElementById('inviteCode').textContent.trim();
+  var msg = document.getElementById('copiedMsg');
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(code).then(function() {
+      msg.textContent = '招待コードをコピーしました';
+    }, function() {
+      msg.textContent = 'コピーできませんでした。コードを長押ししてコピーしてください';
+    });
+  } else {
+    msg.textContent = 'コードを長押ししてコピーしてください';
+  }
+}
+</script>
+
+</body>
+</html>
