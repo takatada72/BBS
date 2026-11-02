@@ -119,6 +119,9 @@
       <span class="code" id="inviteCode">6HEGPM</span>
       <button class="copy-btn" onclick="copyCode()">コピー</button>
     </div>
+    <p style="text-align:center; margin:4px 0 0;">
+      コピーされた回数: <strong id="copyCount">読み込み中…</strong> 回
+    </p>
     <div class="copied" id="copiedMsg"></div>
 
     <p>
@@ -144,12 +147,39 @@
 <footer>公開板（自分勝手に公開しています）</footer>
 
 <script>
+var COUNTER_BASE = 'https://abacus.jasoncameron.dev';
+var COUNTER_PATH = '/takatada72-bbs/invite-copy';
+
+function showCount(value) {
+  document.getElementById('copyCount').textContent = value;
+}
+
+function loadCount() {
+  fetch(COUNTER_BASE + '/get' + COUNTER_PATH)
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      if (typeof d.value === 'number') { showCount(d.value); }
+      else { showCount(0); }
+    })
+    .catch(function() { showCount('-'); });
+}
+
+function hitCount() {
+  fetch(COUNTER_BASE + '/hit' + COUNTER_PATH)
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      if (typeof d.value === 'number') { showCount(d.value); }
+    })
+    .catch(function() { /* カウンターが応答しなくてもコピー自体は継続 */ });
+}
+
 function copyCode() {
   var code = document.getElementById('inviteCode').textContent.trim();
   var msg = document.getElementById('copiedMsg');
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(code).then(function() {
       msg.textContent = '招待コードをコピーしました';
+      hitCount();
     }, function() {
       msg.textContent = 'コピーできませんでした。コードを長押ししてコピーしてください';
     });
@@ -157,6 +187,8 @@ function copyCode() {
     msg.textContent = 'コードを長押ししてコピーしてください';
   }
 }
+
+loadCount();
 </script>
 
 </body>
