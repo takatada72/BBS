@@ -96,6 +96,14 @@
   }
   .video-link { font-size: 0.9rem; word-break: break-all; }
   .note { color: #666; font-size: 0.9rem; }
+  .video-item { margin: 20px 0; text-align: center; }
+  .video-item p { margin: 0 0 8px; font-weight: bold; }
+  .video-item video {
+    width: 100%;
+    max-width: 360px;
+    border-radius: 10px;
+    background: #000;
+  }
   footer {
     text-align: center;
     color: #999;
@@ -141,6 +149,26 @@
       動画が表示されない場合はこちら:
       <a href="https://www.youtube.com/watch?v=ZLXJkimelXw" target="_blank" rel="noopener">https://www.youtube.com/watch?v=ZLXJkimelXw</a>
     </p>
+  </div>
+
+  <div class="card" style="margin-top: 24px;">
+    <h2>作れる動画の事例</h2>
+    <p>招待コードを登録すれば、このような動画も作れます。</p>
+
+    <div class="video-item">
+      <p>ズームイン</p>
+      <video controls playsinline preload="metadata" src="ズームイン.mp4"></video>
+    </div>
+
+    <div class="video-item">
+      <p>ズームイン マンガ編</p>
+      <video controls playsinline preload="metadata" src="ズームインマンガ編.mp4"></video>
+    </div>
+
+    <div class="video-item">
+      <p>ズームイン マンガ冒険</p>
+      <video controls playsinline preload="metadata" src="ズームインマンガ冒険.mp4"></video>
+    </div>
   </div>
 </main>
 
