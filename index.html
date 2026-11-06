@@ -24,6 +24,11 @@
     font-size: 1.6rem;
     letter-spacing: 0.05em;
   }
+  header p {
+    margin: 8px 0 0;
+    font-size: 0.9rem;
+    opacity: 0.85;
+  }
   main {
     max-width: 720px;
     margin: 0 auto;
@@ -34,68 +39,21 @@
     border-radius: 12px;
     padding: 24px 20px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-top: 24px;
   }
+  .card:first-child { margin-top: 0; }
   .card h2 {
     margin-top: 0;
     font-size: 1.15rem;
     border-left: 5px solid #e8a33d;
     padding-left: 10px;
   }
-  .code-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    background: #fdf6e7;
-    border: 2px dashed #e8a33d;
-    border-radius: 10px;
-    padding: 16px;
-    margin: 16px 0;
+  .news {
+    margin: 0;
+    padding-left: 1.2em;
+    font-size: 0.92rem;
   }
-  .code {
-    font-size: 2rem;
-    font-weight: bold;
-    letter-spacing: 0.2em;
-    font-family: monospace;
-  }
-  .copy-btn {
-    background: #e8a33d;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 18px;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  .copy-btn:active { opacity: 0.7; }
-  .copied {
-    font-size: 0.85rem;
-    color: #2e7d32;
-    min-height: 1.2em;
-    text-align: center;
-  }
-  .highlight {
-    background: linear-gradient(transparent 60%, #ffe58a 60%);
-    font-weight: bold;
-  }
-  .video-wrap {
-    position: relative;
-    width: 100%;
-    padding-top: 56.25%;
-    margin: 16px 0 8px;
-    border-radius: 10px;
-    overflow: hidden;
-    background: #000;
-  }
-  .video-wrap iframe {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    border: 0;
-  }
-  .video-link { font-size: 0.9rem; word-break: break-all; }
-  .note { color: #666; font-size: 0.9rem; }
+  .news li { margin: 2px 0; }
   .video-item { margin: 20px 0; text-align: center; }
   .video-item p { margin: 0 0 8px; font-weight: bold; }
   .video-item video {
@@ -103,6 +61,43 @@
     max-width: 360px;
     border-radius: 10px;
     background: #000;
+  }
+  .invite-small {
+    font-size: 0.85rem;
+    color: #555;
+  }
+  .invite-small h2 {
+    font-size: 0.95rem;
+    border-left-color: #bbb;
+    color: #555;
+  }
+  .code-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 6px 0;
+  }
+  .code {
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+    font-family: monospace;
+  }
+  .copy-btn {
+    background: #8a97a3;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    cursor: pointer;
+  }
+  .copy-btn:active { opacity: 0.7; }
+  .copied {
+    font-size: 0.8rem;
+    color: #2e7d32;
+    min-height: 1.2em;
   }
   footer {
     text-align: center;
@@ -116,44 +111,24 @@
 
 <header>
   <h1>公開板（自分勝手に公開しています）</h1>
+  <p>AIで作った動画などを、のんびり公開しているページです。週に1回くらい更新します。</p>
 </header>
 
 <main>
   <div class="card">
-    <h2>muse.aiの紹介コードを公開します</h2>
-
-    <p>招待コード:</p>
-    <div class="code-box">
-      <span class="code" id="inviteCode">6HEGPM</span>
-      <button class="copy-btn" onclick="copyCode()">コピー</button>
-    </div>
-    <p style="text-align:center; margin:4px 0 0;">
-      コピーされた回数: <strong id="copyCount">読み込み中…</strong> 回
-    </p>
-    <div class="copied" id="copiedMsg"></div>
-
-    <p>
-      コードの登録方法は、下記の動画を見てください。<br>
-      muse.aiのアカウントを取得してから<span class="highlight">「48時間以内」</span>に登録すると
-      <strong>10億トークン</strong>が受け取れます。それを使って、動画、画像、プロンプト、色々なことができます。
-    </p>
-
-    <p>他者の方が紹介している動画です。(汗)</p>
-    <div class="video-wrap">
-      <iframe src="https://www.youtube.com/embed/ZLXJkimelXw"
-        title="muse.ai 招待コードの登録方法"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
-    </div>
-    <p class="video-link">
-      動画が表示されない場合はこちら:
-      <a href="https://www.youtube.com/watch?v=ZLXJkimelXw" target="_blank" rel="noopener">https://www.youtube.com/watch?v=ZLXJkimelXw</a>
+    <h2>更新情報</h2>
+    <ul class="news">
+      <li>2026年11月6日：「作れる動画の事例」のコーナーを追加しました。ページの構成も見直しました。</li>
+    </ul>
+    <p style="font-size:0.92rem; margin-bottom:0;">
+      ここは、見た人がちょっと楽しめるものを置いていく場所です。
+      お金が発生するような仕組みはありません。気軽にのぞいて行ってください。
     </p>
   </div>
 
-  <div class="card" style="margin-top: 24px;">
+  <div class="card">
     <h2>作れる動画の事例</h2>
-    <p>招待コードを登録すれば、このような動画も作れます。</p>
+    <p>生成AIで作った動画です。絵の中にどこまでも入っていく「無限ズーム」の動画を置いています。</p>
 
     <div class="video-item">
       <p>ズームイン</p>
@@ -170,35 +145,88 @@
       <video controls playsinline preload="metadata" src="ズームインマンガ冒険.mp4"></video>
     </div>
   </div>
+
+  <div class="card invite-small">
+    <h2>おまけ：muse.aiの招待コード</h2>
+    <p style="margin:4px 0;">
+      上の動画は、AIアシスタント「Muse」（muse.ai）で作りました。招待コードを登録すれば、このような動画も作れます。
+      アカウント取得から48時間以内に登録すると、10億トークンが受け取れます。
+    </p>
+    <div class="code-row">
+      <span>招待コード:</span>
+      <span class="code" id="inviteCode">6HEGPM</span>
+      <button class="copy-btn" onclick="copyCode()">コピー</button>
+      <span>コピーされた回数: <strong id="copyCount">読み込み中…</strong> 回</span>
+    </div>
+    <div class="copied" id="copiedMsg"></div>
+    <p style="margin:4px 0;">
+      登録方法の解説動画:
+      <a href="https://www.youtube.com/watch?v=ZLXJkimelXw" target="_blank" rel="noopener">YouTubeで見る</a>
+      （他者の方が紹介している動画です）
+    </p>
+  </div>
+
+  <div class="card">
+    <details>
+      <summary style="cursor:pointer; font-weight:bold;">更新ログ（クリックで開く）</summary>
+      <p style="font-size:0.9rem; margin:8px 0 4px;">
+        更新ごとに版（バージョン）に名前を付けて、その版が何回見られたかを記録しています。
+      </p>
+      <ul style="font-size:0.92rem; margin:4px 0; padding-left:1.2em;">
+        <li>第1版「動画コーナー開設」 2026年11月6日〜 （この版の閲覧数: <span id="logViewV1">読み込み中…</span> 回）</li>
+      </ul>
+    </details>
+  </div>
 </main>
 
-<footer>公開板（自分勝手に公開しています）</footer>
+<footer>
+  公開板（自分勝手に公開しています）<br>
+  現在の版: 第1版「動画コーナー開設」<br>
+  この版の閲覧回数: <span id="viewCount">読み込み中…</span> 回
+</footer>
 
 <script>
 var COUNTER_BASE = 'https://abacus.jasoncameron.dev';
-var COUNTER_PATH = '/takatada72-bbs/invite-copy';
+var COPY_PATH = '/takatada72-bbs/invite-copy';
+var VIEW_PATH = '/takatada72-bbs/views-v1';
 
-function showCount(value) {
+function showCopyCount(value) {
   document.getElementById('copyCount').textContent = value;
 }
 
-function loadCount() {
-  fetch(COUNTER_BASE + '/get' + COUNTER_PATH)
+function loadCopyCount() {
+  fetch(COUNTER_BASE + '/get' + COPY_PATH)
     .then(function(r) { return r.json(); })
     .then(function(d) {
-      if (typeof d.value === 'number') { showCount(d.value); }
-      else { showCount(0); }
+      if (typeof d.value === 'number') { showCopyCount(d.value); }
+      else { showCopyCount(0); }
     })
-    .catch(function() { showCount('-'); });
+    .catch(function() { showCopyCount('-'); });
 }
 
-function hitCount() {
-  fetch(COUNTER_BASE + '/hit' + COUNTER_PATH)
+function hitCopyCount() {
+  fetch(COUNTER_BASE + '/hit' + COPY_PATH)
     .then(function(r) { return r.json(); })
     .then(function(d) {
-      if (typeof d.value === 'number') { showCount(d.value); }
+      if (typeof d.value === 'number') { showCopyCount(d.value); }
     })
     .catch(function() { /* カウンターが応答しなくてもコピー自体は継続 */ });
+}
+
+function hitViewCount() {
+  fetch(COUNTER_BASE + '/hit' + VIEW_PATH)
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var v = (typeof d.value === 'number') ? d.value : '-';
+      document.getElementById('viewCount').textContent = v;
+      var logEl = document.getElementById('logViewV1');
+      if (logEl) { logEl.textContent = v; }
+    })
+    .catch(function() {
+      document.getElementById('viewCount').textContent = '-';
+      var logEl = document.getElementById('logViewV1');
+      if (logEl) { logEl.textContent = '-'; }
+    });
 }
 
 function copyCode() {
@@ -207,7 +235,7 @@ function copyCode() {
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(code).then(function() {
       msg.textContent = '招待コードをコピーしました';
-      hitCount();
+      hitCopyCount();
     }, function() {
       msg.textContent = 'コピーできませんでした。コードを長押ししてコピーしてください';
     });
@@ -216,7 +244,8 @@ function copyCode() {
   }
 }
 
-loadCount();
+loadCopyCount();
+hitViewCount();
 </script>
 
 </body>
